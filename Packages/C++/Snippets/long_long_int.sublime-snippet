@@ -1,6 +1,0 @@
-<snippet>
-	<description>Long Long Int</description>
-	<content><![CDATA[long long ]]></content>
-	<tabTrigger>ll</tabTrigger>
-	<scope>source.cpp, source.c++</scope>
-</snippet>

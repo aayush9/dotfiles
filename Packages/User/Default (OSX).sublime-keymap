@@ -1,8 +1,0 @@
-[
-    { 
-        "keys": ["alt+b"], "command": "build", "args": {"variant": "build_run"}
-    },
-    {
-    	"keys": ["super+shift+b"], "command": "build", "args": {"variant": "run"}
-    },
-]

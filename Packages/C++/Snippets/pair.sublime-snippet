@@ -1,6 +1,0 @@
-<snippet>
-	<description>Pair</description>
-	<content><![CDATA[pair<long long,long long> ]]></content>
-	<tabTrigger>pll</tabTrigger>
-	<scope>source.cpp, source.c++</scope>
-</snippet>
