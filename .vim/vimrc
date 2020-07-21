@@ -1,0 +1,51 @@
+set nocompatible
+
+filetype off
+set rtp+=~/.vim/bundle/vundle.vim
+
+call vundle#begin()
+Plugin 'vundlevim/vundle.vim'
+
+Plugin 'valloric/youcompleteme'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-surround'
+Plugin 'jiangmiao/auto-pairs'
+
+call vundle#end()
+
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/youcompleteme/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+
+syntax on
+set relativenumber
+set number
+set clipboard=unnamed
+set mouse=a
+set tabstop=4
+set autoindent
+set shiftwidth=4
+set softtabstop=4
+set smarttab
+set expandtab
+set smartcase
+set lazyredraw
+set backspace=indent,eol,start
+filetype plugin indent on
+
+set foldmethod=syntax
+set nofoldenable
+
+set t_co=256
+set background=dark
+
+autocmd filetype cpp nnoremap ∫ :w <bar> !g++ -std=c++17 -fsanitize=address -fsanitize=signed-integer-overflow % -o %:r && ./%:r <cr>
+autocmd filetype java nnoremap ∫ :w <bar> !javac % && java -enableassertions %:r <cr>
+autocmd filetype python nnoremap ∫ :w <bar> !python % <cr>
+
+nnoremap <C-Left> :tabp<CR>
+nnoremap <C-Right> :tabn<CR>
+nnoremap <C-t> :tabnew<CR>
+
+autocmd BufWinEnter * NERDTreeMirror
+autocmd bufenter * if(winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree()) |q|endif
