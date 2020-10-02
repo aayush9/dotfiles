@@ -110,8 +110,6 @@ export LC_ALL=en_US.UTF-8
 
 alias :q=exit
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-alias bm++="g++ -std=c++17 -fsanitize=address -fsanitize=signed-integer-overflow"
+alias bm++="g++ -std=c++17"
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
