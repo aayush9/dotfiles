@@ -42,12 +42,6 @@
         "colorScheme" : "Firewatch",
         "fontFace": "Meslo LG M for Powerline",
         "fontSize": 10
-      },
-      {
-        "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
-        "hidden": false,
-        "name": "Azure Cloud Shell",
-        "source": "Windows.Terminal.Azure"
       }
     ]
   },
@@ -80,10 +74,8 @@
   // Add any keybinding overrides to this array.
   // To unbind a default keybinding, set the command to "unbound"
   "keybindings": [
-    { "command": "closeTab", "keys": "ctrl+w" },
-    { "command": "newTab", "keys": "ctrl+t" },
-    { "command": "nextTab", "keys": "ctrl+right" },
-    { "command": "prevTab", "keys": "ctrl+left" },
+    { "command": "closeTab", "keys": "ctrl+shift+w" },
+    { "command": "newTab", "keys": "ctrl+shift+t" },
     { "command": "closePane", "keys": "alt+w" },
     { "command": {"action": "splitPane", "split": "vertical"}, "keys": "alt+d" },
     { "command": {"action": "splitPane", "split": "horizontal"}, "keys": "alt+shift+d" },
