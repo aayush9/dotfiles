@@ -16,9 +16,8 @@ if (Test-Path($ChocolateyProfile)) {
 }
 
 if ($env:WT_SESSION) {
-  oh-my-posh --init --shell pwsh --config ~\.agnoster.omp.json | Invoke-Expression
-} else {
-}
+  oh-my-posh --init --shell pwsh --config ~\dotfiles\.agnoster.omp.json | Invoke-Expression
+} 
 
 function which($name)
 {
