@@ -1,0 +1,87 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "console_title": true,
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "exit",
+          "style": "powerline",
+          "foreground": "#ffffff",
+          "background": "#00897b",
+          "properties": {
+            "always_enabled": true,
+            "success_icon": "✓",
+            "always_numeric": true,
+            "color_background": true,
+            "error_color": "#e74c3c"
+          }
+        },
+        {
+          "background": "#ffe9aa",
+          "foreground": "#100e23",
+          "powerline_symbol": "",
+          "style": "powerline",
+          "type": "root"
+        },
+        {
+          "type": "executiontime",
+          "style": "powerline",
+          "powerline_symbol": "\uE0B0",
+          "background": "#ffffff",
+          "foreground": "#100e23",
+          "properties": {
+            "threshold": 250,
+            "style": "austin"
+          }
+        },
+        {
+          "background": "#92deff",
+          "foreground": "#100e23",
+          "powerline_symbol": "",
+          "properties": {
+            "folder_separator_icon": "\\",
+            "home_icon": "",
+            "style": "mixed",
+            // "enable_hyperlink": true,
+            "mixed_threshold": 3
+          },
+          "style": "powerline",
+          "type": "path"
+        },
+        {
+          "background": "#95ffa4",
+          "foreground": "#193549",
+          "powerline_symbol": "",
+          "style": "powerline",
+          "type": "git",
+          "properties": {
+            "status_colors_enabled": true,
+            "local_changes_color": "#ffe9aa",
+            "exclude_folders": [
+              "D:\\\\one\\\\Azure\\\\Compute-Move.*"
+            ]
+          }
+        },
+        {
+          "background": "#95ffa4",
+          "foreground": "#193549",
+          "powerline_symbol": "",
+          "style": "powerline",
+          "type": "git",
+          "properties": {
+            "include_folders": [
+              "D:\\\\one\\\\Azure\\\\Compute-Move.*"
+            ],
+            "display_status": false,
+            "status_colors_enabled": false,
+            "local_changes_color": "#ffe9aa"
+          }
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "final_space": true
+}
