@@ -19,8 +19,7 @@ if ($env:WT_SESSION) {
   oh-my-posh --init --shell pwsh --config ~\dotfiles\.agnoster.omp.json | Invoke-Expression
 } 
 
-function which($name)
-{
+function which($name) {
   Get-Command $name | Select-Object -ExpandProperty Definition
 }
 
