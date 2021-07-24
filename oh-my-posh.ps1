@@ -1,3 +1,5 @@
+#Requires -RunAsAdministrator
+
 winget install JanDeDobbeleer.OhMyPosh
 
 cp "Meslo LG M Regular Nerd Font Complete.ttf" $env:systemroot\fonts -Force
