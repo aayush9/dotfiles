@@ -17,7 +17,7 @@ if [[ $TERM_PROGRAM == "iTerm.app" || $TERM_PROGRAM == "tmux" || $TERM_PROGRAM =
     plugins=(git zsh-autosuggestions zsh-syntax-highlighting fd)
 
     autoload -U compinit && compinit
-    [ -f ~/.p10k.zsh ] && . ~/.p10k.zsh
+    [ -f ~/dotfiles/p10k.zsh ] && . ~/dotfiles/p10k.zsh
 fi
 
 . ~/.oh-my-zsh/oh-my-zsh.sh
