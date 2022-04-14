@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [ -z "$1" ]; then
+  echo "Usage: bm++ <file_path>"
+  return
+fi
+
+g++ -std=c++20 -O2 -fsanitize=signed-integer-overflow -Wl,-stack_size -Wl,20000000 -include-pch bits/stdc++.h.gch $1 -o ${1%.*}
+
