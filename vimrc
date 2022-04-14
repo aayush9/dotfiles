@@ -7,13 +7,14 @@ call vundle#begin()
 Plugin 'vundlevim/vundle.vim'
 
 Plugin 'valloric/youcompleteme'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
 Plugin 'jiangmiao/auto-pairs'
 
 call vundle#end()
+
+let g:ycm_global_ycm_extra_conf = '~/dotfiles/ycm_extra_config.py'
+set completeopt-=preview
 
 syntax on
 set relativenumber
