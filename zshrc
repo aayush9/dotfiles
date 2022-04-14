@@ -8,7 +8,7 @@ if [[ $OSTYPE == "darwin"* ]]; then
     export HOMEBREW_CASK_OPTS="--caskroom=$HOME/.brew/cask/ --appdir=~/Applications"
 fi
 
-if [[ $TERM_PROGRAM == "iTerm.app" || $TERM_PROGRAM == "tmux" || $TERM_PROGRAM == "vscode" ]]; then
+if [[ $TERM_PROGRAM == "iTerm.app" || $TERM_PROGRAM == "tmux" || $TERM_PROGRAM == "vscode" || ! -z "$WT_SESSION" ]]; then
     ZSH_THEME="powerlevel10k/powerlevel10k"
     POWERLEVEL9K_DISABLE_RPROMPT="true"
     ENABLE_CORRECTION="false"
