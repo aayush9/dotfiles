@@ -15,13 +15,11 @@ Plugin 'jiangmiao/auto-pairs'
 
 call vundle#end()
 
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/youcompleteme/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
-
 syntax on
 set relativenumber
 set number
 set clipboard=unnamed
-set mouse=a
+set mouse=i
 set tabstop=4
 set autoindent
 set shiftwidth=4
@@ -39,13 +37,14 @@ set nofoldenable
 set t_co=256
 set background=dark
 
-autocmd filetype cpp nnoremap ∫ :w <bar> !g++ -std=c++17 -fsanitize=address -fsanitize=signed-integer-overflow % -o %:r && ./%:r <cr>
-autocmd filetype java nnoremap ∫ :w <bar> !javac % && java -enableassertions %:r <cr>
-autocmd filetype python nnoremap ∫ :w <bar> !python % <cr>
-
+nmap Q <nop>
 nnoremap <C-Left> :tabp<CR>
 nnoremap <C-Right> :tabn<CR>
 nnoremap <C-t> :tabnew<CR>
+nnoremap <C-q> :tabclose<CR>
+nnoremap <C-n> :NERDTreeToggle<CR>
+nmap <A-Up> :m -2<CR>
+nmap <A-Down> :m +1<CR>
 
 autocmd BufWinEnter * NERDTreeMirror
 autocmd bufenter * if(winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree()) |q|endif
