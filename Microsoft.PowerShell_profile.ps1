@@ -9,7 +9,7 @@ if (Test-Path($ChocolateyProfile)) {
   Import-Module "$ChocolateyProfile"
 }
 
-if ($env:WT_SESSION -or ($env:TERM_PROGRAM -eq 'vscode')) {
+if ($env:WT_SESSION -or ($env:TERM_PROGRAM -eq 'vscode') -or $IsMacOs -or $IsLinux) {
   Import-Module -Name oh-my-posh,DirColors,Terminal-Icons
   Set-PoshPrompt -Theme ~\dotfiles\PSTheme.omp.json
 }
