@@ -1,0 +1,4 @@
+zshrc eol=lf
+p10k.zsh eol=lf
+bm++ eol=lf
+zsh_plugins.sh eol=lf
