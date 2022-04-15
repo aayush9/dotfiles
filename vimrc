@@ -7,6 +7,7 @@ call vundle#begin()
 Plugin 'vundlevim/vundle.vim'
 
 Plugin 'valloric/youcompleteme'
+Plugin 'vim-airline/vim-airline'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
 Plugin 'jiangmiao/auto-pairs'
