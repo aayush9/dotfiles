@@ -1,4 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]] && . "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
@@ -8,9 +7,8 @@ if [[ $OSTYPE == "darwin"* ]]; then
     export HOMEBREW_CASK_OPTS="--caskroom=$HOME/.brew/cask/ --appdir=~/Applications"
 fi
 
-if [[ $TERM_PROGRAM == "iTerm.app" || $TERM_PROGRAM == "tmux" || $TERM_PROGRAM == "vscode" || ! -z "$WT_SESSION" ]]; then
+if [[ $TERM_PROGRAM =~ ^(iTerm.app|tmux|vscode)$ || ! -z $WT_SESSION ]]; then
     ZSH_THEME="powerlevel10k/powerlevel10k"
-    POWERLEVEL9K_DISABLE_RPROMPT="true"
     ENABLE_CORRECTION="false"
     COMPLETION_WAITING_DOTS="true"
     
