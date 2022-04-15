@@ -7,15 +7,17 @@ if [[ $OSTYPE == "darwin"* ]]; then
     export HOMEBREW_CASK_OPTS="--caskroom=$HOME/.brew/cask/ --appdir=~/Applications"
 fi
 
-if [[ $TERM_PROGRAM =~ ^(iTerm.app|tmux|vscode)$ || ! -z $WT_SESSION ]]; then
-    ZSH_THEME="powerlevel10k/powerlevel10k"
-    ENABLE_CORRECTION="false"
-    COMPLETION_WAITING_DOTS="true"
-    
-    plugins=(git zsh-autosuggestions zsh-syntax-highlighting fd)
+ENABLE_CORRECTION="false"
+COMPLETION_WAITING_DOTS="true"
+autoload -U compinit && compinit
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting fd)
 
-    autoload -U compinit && compinit
+if [[ $TERM_PROGRAM =~ ^(iTerm.app|tmux)$ || ! -z $WT_SESSION ]]
+then
+    ZSH_THEME="powerlevel10k/powerlevel10k"
     [ -f ~/dotfiles/p10k.zsh ] && . ~/dotfiles/p10k.zsh
+else
+    ZSH_THEME="robbyrussell"
 fi
 
 . ~/.oh-my-zsh/oh-my-zsh.sh
