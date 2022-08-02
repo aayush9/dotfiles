@@ -13,7 +13,7 @@ COMPLETION_WAITING_DOTS="true"
 autoload -U compinit && compinit
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting fd)
 
-if [[ $TERM_PROGRAM =~ ^(iTerm.app|tmux)$ || ! -z $WT_SESSION || ${$(ps -p $(ps -p $$ -o ppid=) -o cmd=):t} =~ ^gnome-terminal ]]
+if [[ $TERM_PROGRAM =~ ^(iTerm.app|tmux)$ || ! -z $WT_SESSION || ${$(ps -p $(ps -p $$ -o ppid=) -o cmd=):t} =~ ^(gnome-terminal|konsole|tilix) ]]
 then
     ZSH_THEME="powerlevel10k/powerlevel10k"
     [ -f ~/dotfiles/p10k.zsh ] && . ~/dotfiles/p10k.zsh
