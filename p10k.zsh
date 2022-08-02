@@ -89,7 +89,7 @@
 
   ##################################[ citc_workspace: current workspace ]##################################
   typeset -g POWERLEVEL9K_CITC_WORKSPACE_FOREGROUND=0
-  typeset -g POWERLEVEL9K_CITC_WORKSPACE_BACKGROUND=149
+  # typeset -g POWERLEVEL9K_CITC_WORKSPACE_BACKGROUND=149
 
   ##################################[ dir: current directory ]##################################
   # Default current directory color.
