@@ -3,6 +3,7 @@ $global:DefaultUser = [System.Environment]::UserName
 Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
 Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
 Set-PSReadlineKeyHandler -Chord Tab -Function MenuComplete
+Set-PSReadLineOption -EditMode Windows
 
 $ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
 if (Test-Path($ChocolateyProfile)) {

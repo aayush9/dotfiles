@@ -23,7 +23,7 @@ highlight YcmErrorSign ctermfg=1 guifg=#ffaf00
 syntax on
 set relativenumber
 set number
-set clipboard=unnamed
+set clipboard=unnamedplus
 set mouse=i
 set tabstop=4
 set autoindent
@@ -52,6 +52,7 @@ nnoremap <C-Right> :tabn<CR>
 nnoremap <C-t> :tabnew<CR>
 nnoremap <C-q> :tabclose<CR>
 nnoremap <C-n> :NERDTreeToggle<CR>
+inoremap jk <Esc>
 nmap <A-Up> :m -2<CR>
 nmap <A-Down> :m +1<CR>
 

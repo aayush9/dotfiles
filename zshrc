@@ -25,9 +25,10 @@ fi
 
 alias p+=pushd
 alias p-=popd
+alias :q=exit
 
 type pbcopy &> /dev/null && alias clip=pbcopy
-type xclip &> /dev/null && alias clip=xclip
+type xclip &> /dev/null && alias clip='xclip -sel clip'
 
 if [[ -f ~/.vim/bundle/vimpager/vimpager ]]; then
     export vimpager=~/.vim/bundle/vimpager/vimpager
