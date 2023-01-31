@@ -11,8 +11,8 @@ if (Test-Path($ChocolateyProfile)) {
 }
 
 if ($env:WT_SESSION -or ($env:TERM_PROGRAM -eq 'vscode') -or $IsMacOs -or $IsLinux) {
-  Import-Module -Name oh-my-posh,DirColors,Terminal-Icons
-  Set-PoshPrompt -Theme ~\dotfiles\PSTheme.omp.json
+  Import-Module -Name DirColors,Terminal-Icons
+  # oh-my-posh init pwsh --config ~\dotfiles\PSTheme.omp.json | Invoke-Expression
 }
 
 function touch {
@@ -24,5 +24,4 @@ function which($name) {
 }
 
 New-Alias vi vim
-
-Write-Host $NULL
+New-Alias sd p4
