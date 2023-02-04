@@ -11,7 +11,12 @@ fi
 ENABLE_CORRECTION="false"
 COMPLETION_WAITING_DOTS="true"
 autoload -U compinit && compinit
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting fd)
+plugins=(
+  git
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  fd
+)
 
 if [[ $TERM_PROGRAM =~ ^(iTerm.app|tmux)$ || ! -z $WT_SESSION || ${$(ps -p $(ps -p $$ -o ppid=) -o cmd=):t} =~ ^(gnome-terminal|konsole|tilix) ]]
 then
@@ -36,5 +41,5 @@ if [[ -f ~/.vim/bundle/vimpager/vimpager ]]; then
     export PAGER=$vimpager
 fi
 
-[[ ! -f ~/google.sh ]] || . ~/google.sh
+[[ ! -f ~/.googlerc ]] || . ~/.googlerc
 
