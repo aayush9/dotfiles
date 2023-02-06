@@ -64,6 +64,8 @@ let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 
 nmap Q <nop>
+noremap p P
+noremap P ]p
 nnoremap <C-Left> :tabp<CR>
 nnoremap <C-Right> :tabn<CR>
 nnoremap <C-t> :tabnew<CR>
