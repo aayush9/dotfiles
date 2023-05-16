@@ -9,13 +9,15 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'svermeulen/vim-subversive'
+Plugin 'mg979/vim-visual-multi'
+Plugin 'nelstrom/vim-visual-star-search'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-airline/vim-airline'
-Plugin 'vim-scripts/AnsiEsc'
 Plugin 'will133/vim-dirdiff'
-
+Plugin 'sjl/vitality.vim'
 if filereadable(expand('~/.googlerc'))
   source ~/google.vim
 else
@@ -45,9 +47,14 @@ set signcolumn=number
 set smartcase
 set lazyredraw
 set backspace=indent,eol,start
-
+set hlsearch
+set whichwrap+=h,l,<,>,[,]
 set foldmethod=syntax
 set nofoldenable
+set virtualedit=onemore
+set ttimeout
+set ttimeoutlen=1
+set ttyfast
 
 let g:PaperColor_Theme_Options = {
 \   'theme': {
@@ -56,12 +63,17 @@ let g:PaperColor_Theme_Options = {
 \     }
 \   }
 \}
-colorscheme PaperColor
 set t_co=256
 set background=dark
+colorscheme PaperColor
 
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
+
+let g:VM_maps = {}
+let g:VM_maps["I BS"] = ''
+let g:VM_maps["I Return"] = ''
+let g:VM_maps['Find Under'] = '<C-d>'
 
 nmap Q <nop>
 noremap p P
@@ -80,6 +92,8 @@ vnoremap <A-Up> :m '<-2<CR>gv=gv
 inoremap jk <Esc>
 map <F12> :YcmCompleter GoToDefinition<CR>
 map <A-F12> :YcmCompleter GoToReferences<CR>
+nmap s <plug>(SubversiveSubstituteRange)
+xmap s <plug>(SubversiveSubstituteRange)
 
 autocmd BufWinEnter * NERDTreeMirror
 autocmd bufenter * if(winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree()) |q|endif
