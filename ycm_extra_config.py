@@ -25,7 +25,7 @@ database = None if not os.path.exists(compilation_database_folder) else ycm_core
 flags = [
     '-Wall',
     '-Wextra',
-    '-std=c++14',
+    '-std=c++20',
     '-x',
     'c++',
     '-I',

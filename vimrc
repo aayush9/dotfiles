@@ -35,7 +35,11 @@ call vundle#end()
 syntax on
 set number
 set relativenumber
-set clipboard=unnamedplus
+if has('macunix')
+  set clipboard=unnamed
+else
+  set clipboard=unnamedplus
+endif
 set mouse=i
 set tabstop=2
 set shiftwidth=2
@@ -49,6 +53,8 @@ set lazyredraw
 set backspace=indent,eol,start
 set hlsearch
 set whichwrap+=h,l,<,>,[,]
+set t_co=256
+set background=dark
 set foldmethod=syntax
 set nofoldenable
 set virtualedit=onemore
@@ -63,8 +69,6 @@ let g:PaperColor_Theme_Options = {
 \     }
 \   }
 \}
-set t_co=256
-set background=dark
 colorscheme PaperColor
 
 let NERDTreeMinimalUI = 1
