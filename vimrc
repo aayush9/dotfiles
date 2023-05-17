@@ -17,7 +17,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-airline/vim-airline'
 Plugin 'will133/vim-dirdiff'
-Plugin 'sjl/vitality.vim'
 if filereadable(expand('~/.googlerc'))
   source ~/google.vim
 else
@@ -74,6 +73,14 @@ colorscheme PaperColor
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 
+if empty($TMUX)
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
+else
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+endif
+
 let g:VM_maps = {}
 let g:VM_maps["I BS"] = ''
 let g:VM_maps["I Return"] = ''
@@ -101,3 +108,5 @@ xmap s <plug>(SubversiveSubstituteRange)
 
 autocmd BufWinEnter * NERDTreeMirror
 autocmd bufenter * if(winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree()) |q|endif
+autocmd VimEnter * silent !echo -ne "\e[2 q"
+autocmd VimLeave * silent !echo -ne "\e[6 q"
