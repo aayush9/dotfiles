@@ -34,6 +34,7 @@ alias :q=exit
 
 type pbcopy &> /dev/null && alias clip=pbcopy
 type xclip &> /dev/null && alias clip='xclip -sel clip'
+type nvim &> /dev/null && alias vim=nvim
 
 if [[ -f ~/.vim/bundle/vimpager/vimpager ]]; then
     export vimpager=~/.vim/bundle/vimpager/vimpager
