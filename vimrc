@@ -3,24 +3,21 @@ set nocompatible
 filetype off
 filetype plugin indent on
 
-set rtp+=~/.vim/bundle/Vundle.vim
+call plug#begin()
 
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-
-Plugin 'NLKNguyen/papercolor-theme'
-Plugin 'svermeulen/vim-subversive'
-Plugin 'mg979/vim-visual-multi'
-Plugin 'nelstrom/vim-visual-star-search'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-surround'
-Plugin 'vim-airline/vim-airline'
-Plugin 'will133/vim-dirdiff'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'svermeulen/vim-subversive'
+Plug 'mg979/vim-visual-multi'
+Plug 'nelstrom/vim-visual-star-search'
+Plug 'jiangmiao/auto-pairs'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
+Plug 'will133/vim-dirdiff'
 if filereadable(expand('~/.googlerc'))
   source ~/google.vim
 else
-  Plugin 'valloric/youcompleteme'
+  Plug 'valloric/youcompleteme'
 endif
 
 let g:ycm_global_ycm_extra_conf = '~/dotfiles/ycm_extra_config.py'
@@ -29,7 +26,7 @@ let g:ycm_error_symbol = '✖'
 set completeopt-=preview
 highlight YcmErrorSign ctermfg=1 guifg=#ffaf00
 
-call vundle#end()
+call plug#end()
 
 syntax on
 set number
@@ -106,7 +103,9 @@ map <A-F12> :YcmCompleter GoToReferences<CR>
 nmap s <plug>(SubversiveSubstituteRange)
 xmap s <plug>(SubversiveSubstituteRange)
 
-autocmd BufWinEnter * NERDTreeMirror
+autocmd BufWinEnter * silent NERDTreeMirror
 autocmd bufenter * if(winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree()) |q|endif
-autocmd VimEnter * silent !echo -ne "\e[2 q"
-autocmd VimLeave * silent !echo -ne "\e[6 q"
+augroup RestoreCursorShapeOnExit
+    autocmd!
+    autocmd VimLeave * set guicursor=a:ver100
+augroup END
