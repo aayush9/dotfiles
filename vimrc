@@ -11,9 +11,13 @@ Plug 'mg979/vim-visual-multi'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'will133/vim-dirdiff'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
+Plug 'kyazdani42/nvim-web-devicons'
 if filereadable(expand('~/.googlerc'))
   source ~/google.vim
 else
@@ -29,6 +33,7 @@ highlight YcmErrorSign ctermfg=1 guifg=#ffaf00
 call plug#end()
 
 syntax on
+set shortmess=I
 set number
 set relativenumber
 if has('macunix')
