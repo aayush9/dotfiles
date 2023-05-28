@@ -32,7 +32,6 @@ alias p+=pushd
 alias p-=popd
 alias :q=exit
 
-type logo-ls &> /dev/null && alias ls=logo-ls
 type pbcopy &> /dev/null && alias clip=pbcopy
 type xclip &> /dev/null && alias clip='xclip -sel clip'
 
