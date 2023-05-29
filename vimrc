@@ -32,6 +32,10 @@ highlight YcmErrorSign ctermfg=1 guifg=#ffaf00
 
 call plug#end()
 
+if filereadable(expand('~/.googlerc')) && has('nvim')
+  source ~/google.lua
+endif
+
 syntax on
 set shortmess=I
 set number
