@@ -108,7 +108,7 @@ inoremap <A-Up> <Esc>:m .-2<CR>==gi
 vnoremap <A-Up> :m '<-2<CR>gv=gv
 inoremap jk <Esc>
 nmap <C-_> :call nerdcommenter#Comment('n', 'toggle')<CR>
-vmap <C-_> <Esc>:call nerdcommenter#Comment('n', 'toggle')<CR>gv=gv
+vmap <C-_> :call nerdcommenter#Comment('x', 'toggle')<CR>gv=gv
 imap <C-_> <Esc>:call nerdcommenter#Comment('n', 'toggle')<CR>==gi
 map <F12> :YcmCompleter GoToDefinition<CR>
 map <A-F12> :YcmCompleter GoToReferences<CR>
