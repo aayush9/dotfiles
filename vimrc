@@ -18,7 +18,7 @@ Plug 'will133/vim-dirdiff'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
 Plug 'kyazdani42/nvim-web-devicons'
-if filereadable(expand('~/.googlerc'))
+if filereadable(expand('~/google.vim'))
   source ~/google.vim
 else
   Plug 'valloric/youcompleteme'
@@ -32,7 +32,7 @@ highlight YcmErrorSign ctermfg=1 guifg=#ffaf00
 
 call plug#end()
 
-if filereadable(expand('~/.googlerc')) && has('nvim')
+if filereadable(expand('~/google.lua')) && has('nvim')
   source ~/google.lua
 endif
 
