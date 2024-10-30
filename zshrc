@@ -42,4 +42,5 @@ if [[ -f ~/.vim/bundle/vimpager/vimpager ]]; then
 fi
 
 [[ ! -f ~/.googlerc ]] || . ~/.googlerc
+[[ ! -f ~/.metarc ]] || . ~/.metarc
 
